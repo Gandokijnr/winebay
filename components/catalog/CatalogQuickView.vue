@@ -15,6 +15,7 @@ const emit = defineEmits<{
   (e: 'close'): void
   (e: 'add-to-cart'): void
   (e: 'view-details'): void
+  (e: 'checkout'): void
 }>()
 
 const showAddedModal = ref(false)
@@ -22,6 +23,10 @@ const showAddedModal = ref(false)
 const onAddToCart = () => {
   emit('add-to-cart')
   showAddedModal.value = true
+}
+
+const onCheckout = () => {
+  emit('checkout')
 }
 </script>
 
@@ -91,9 +96,9 @@ const onAddToCart = () => {
                   <BaseButton
                     variant="secondary"
                     size="md"
-                    @click="emit('view-details')"
+                    @click="onCheckout"
                   >
-                    View details
+                    Checkout
                   </BaseButton>
                 </div>
               </div>

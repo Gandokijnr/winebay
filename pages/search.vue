@@ -287,6 +287,12 @@ const handleQuickViewDetails = () => {
   if (!quickViewWine.value) return
   router.push(`/wines/${quickViewWine.value.slug}`)
 }
+
+const handleQuickViewCheckout = () => {
+  if (!quickViewWine.value) return
+  handleAddToCart(quickViewWine.value)
+  router.push('/checkout')
+}
 </script>
 
 <template>
@@ -412,6 +418,7 @@ const handleQuickViewDetails = () => {
       @close="closeQuickView"
       @add-to-cart="handleQuickViewAddToCart"
       @view-details="handleQuickViewDetails"
+      @checkout="handleQuickViewCheckout"
     />
   </div>
 </template>

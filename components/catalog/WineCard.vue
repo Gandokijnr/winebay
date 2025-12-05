@@ -29,6 +29,7 @@ const onAddToCart = () => {
 <template>
   <article
     class="group relative rounded-2xl bg-white p-3 sm:p-4 shadow-sm hover:shadow-lg border border-transparent hover:border-[#F3DEC0] transition flex flex-col"
+    @click="emit('quick-view')"
   >
     <!-- Wishlist icon -->
     <button

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
-import { useRouter } from 'vue-router'
+import { computed, ref, watch } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
 import { useCart } from '~/composables/useCart'
 import CatalogFiltersSidebar from '~/components/catalog/CatalogFiltersSidebar.vue'
 import CatalogToolbar from '~/components/catalog/CatalogToolbar.vue'
@@ -10,6 +10,7 @@ import CatalogQuickView from '~/components/catalog/CatalogQuickView.vue'
 import type { CatalogFilters, CatalogWine, WineType, CatalogSortOption } from '~/types/catalog'
 
 const router = useRouter()
+const route = useRoute()
 const { addWine: addToCart } = useCart()
 
 const allWines = ref<CatalogWine[]>([
@@ -144,6 +145,23 @@ const currentPage = ref(1)
 const pageSize = ref(12)
 const wishlistIds = ref<Set<number>>(new Set())
 
+const applyRouteFilters = () => {
+  const typeParam = route.query.type
+  if (typeof typeParam === 'string') {
+    filters.value.types = [typeParam as WineType]
+    currentPage.value = 1
+  }
+}
+
+applyRouteFilters()
+
+watch(
+  () => route.query.type,
+  () => {
+    applyRouteFilters()
+  }
+)
+
 const quickViewOpen = ref(false)
 const quickViewWine = ref<CatalogWine | null>(null)
 const filtersOpenMobile = ref(false)
@@ -269,6 +287,12 @@ const handleQuickViewDetails = () => {
   // TODO: navigate to product detail route when implemented
   router.push(`/wines/${quickViewWine.value.slug}`)
 }
+
+const handleQuickViewCheckout = () => {
+  if (!quickViewWine.value) return
+  handleAddToCart(quickViewWine.value)
+  router.push('/checkout')
+}
 </script>
 
 <template>
@@ -358,6 +382,7 @@ const handleQuickViewDetails = () => {
       @close="closeQuickView"
       @add-to-cart="handleQuickViewAddToCart"
       @view-details="handleQuickViewDetails"
+      @checkout="handleQuickViewCheckout"
     />
   </div>
 </template>

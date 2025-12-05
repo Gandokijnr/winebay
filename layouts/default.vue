@@ -11,37 +11,42 @@
         <NuxtLink
           to="/"
           class="flex flex-col items-center justify-center gap-0.5 flex-1"
+          :class="isActive('/') ? 'text-[#6B1238]' : ''"
         >
           <Home :size="18" />
           <span>Home</span>
         </NuxtLink>
         <NuxtLink
-          to="/categories"
+          to="/catalog"
           class="flex flex-col items-center justify-center gap-0.5 flex-1"
+          :class="isActive('/catalog') ? 'text-[#6B1238]' : ''"
         >
           <Grid3X3 :size="18" />
-          <span>Categories</span>
+          <span>Shop</span>
         </NuxtLink>
         <NuxtLink
-          to="/feed"
+          to="/cart"
           class="flex flex-col items-center justify-center gap-0.5 flex-1"
+          :class="isActive('/cart') ? 'text-[#6B1238]' : ''"
         >
-          <Compass :size="18" />
-          <span>Feed</span>
+          <div class="relative flex items-center justify-center">
+            <ShoppingCart :size="18" />
+            <span
+              v-if="itemCount > 0"
+              class="absolute -top-2 -right-3 inline-flex h-4 min-w-[1rem] items-center justify-center rounded-full bg-[#D8B46A] text-[10px] font-semibold text-[#111118] px-1"
+            >
+              {{ itemCount }}
+            </span>
+          </div>
+          <span>Cart</span>
         </NuxtLink>
         <NuxtLink
           to="/account"
           class="flex flex-col items-center justify-center gap-0.5 flex-1"
+          :class="isActive('/account') ? 'text-[#6B1238]' : ''"
         >
           <User :size="18" />
           <span>Account</span>
-        </NuxtLink>
-        <NuxtLink
-          to="/help"
-          class="flex flex-col items-center justify-center gap-0.5 flex-1"
-        >
-          <HelpCircle :size="18" />
-          <span>Help</span>
         </NuxtLink>
       </div>
     </nav>
@@ -53,5 +58,12 @@
 <script setup lang="ts">
 import Header from '~/components/Header.vue'
 import Footer from '~/components/Footer.vue'
-import { Home, Grid3X3, Compass, User, HelpCircle } from 'lucide-vue-next'
+import { Home, Grid3X3, Compass, User, HelpCircle, ShoppingCart } from 'lucide-vue-next'
+import { useRoute } from 'vue-router'
+import { useCart } from '~/composables/useCart'
+
+const route = useRoute()
+const { itemCount } = useCart()
+
+const isActive = (to: string) => route.path === to || route.path.startsWith(to + '/')
 </script>

@@ -57,9 +57,17 @@
           </div>
           <div class="relative">
             <div
-              class="relative h-64 sm:h-72 lg:h-80 rounded-3xl bg-gradient-to-br from-[#2A101B] via-[#6B1238] to-[#D8B46A] overflow-hidden shadow-2xl"
+              class="relative h-64 sm:h-72 lg:h-80 rounded-3xl overflow-hidden shadow-2xl bg-black"
             >
-              <div class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_top,_#ffffff_0,_transparent_60%)]"></div>
+              <div class="absolute inset-0">
+                <img
+                  :src="featuredWines[2].image"
+                  alt="Featured Bordeaux wine background"
+                  class="h-full w-full object-cover"
+                />
+                <div class="absolute inset-0 bg-black/55"></div>
+                <div class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_top,_#ffffff_0,_transparent_60%)]"></div>
+              </div>
               <div class="relative h-full flex flex-col justify-between p-5">
                 <div class="flex justify-between items-start text-xs text-[#F3DEC0]">
                   <div>
@@ -83,9 +91,13 @@
                     </button>
                   </div>
                   <div
-                    class="relative w-24 sm:w-28 lg:w-32 h-40 sm:h-48 rounded-full bg-gradient-to-b from-[#F3DEC0] to-[#6B1238] flex items-end justify-center shadow-[0_20px_60px_rgba(0,0,0,0.6)]"
+                    class="relative w-24 sm:w-28 lg:w-32 h-40 sm:h-48 rounded-3xl overflow-hidden bg-black/20 shadow-[0_20px_60px_rgba(0,0,0,0.6)]"
                   >
-                    <div class="w-10 sm:w-11 lg:w-12 h-32 sm:h-36 lg:h-40 bg-[#FDF8F0] rounded-full border border-white/40"></div>
+                    <img
+                      :src="featuredWines[0].image"
+                      alt="Selection of red wines on a table"
+                      class="h-full w-full object-cover"
+                    />
                     <div class="absolute -bottom-4 left-1/2 -translate-x-1/2 w-24 h-10 bg-black/40 blur-2xl rounded-full"></div>
                   </div>
                 </div>
@@ -119,23 +131,36 @@
             <button
               v-for="category in categories"
               :key="category.name"
-              class="group relative flex flex-col items-start rounded-2xl bg-white p-4 sm:p-5 border border-transparent hover:border-[#F3DEC0] hover:shadow-md transition-all"
+              class="group relative overflow-hidden rounded-2xl border border-transparent hover:border-[#F3DEC0] hover:shadow-md transition-all bg-black"
+              @click="goToCategory(category)"
             >
-              <div class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#F3DEC0] text-xs font-semibold text-[#6B1238]">
-                {{ category.short }}
+              <div class="absolute inset-0">
+                <img
+                  v-if="category.image"
+                  :src="category.image"
+                  :alt="category.name"
+                  loading="lazy"
+                  class="h-full w-full object-cover"
+                />
+                <div class="absolute inset-0 bg-black/50 group-hover:bg-black/40 transition-colors"></div>
               </div>
-              <div class="space-y-1">
-                <p class="font-semibold text-sm sm:text-base text-[#111118]">
-                  {{ category.name }}
-                </p>
-                <p class="text-xs text-[#4A4A54]">
-                  {{ category.description }}
-                </p>
-                <p class="text-[11px] text-[#A0A0AA]">
-                  {{ category.count }}+ bottles
-                </p>
+              <div class="relative p-4 sm:p-5 flex flex-col items-start h-full">
+                <div class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#F3DEC0] text-xs font-semibold text-[#6B1238]">
+                  {{ category.short }}
+                </div>
+                <div class="space-y-1">
+                  <p class="font-semibold text-sm sm:text-base text-white">
+                    {{ category.name }}
+                  </p>
+                  <p class="text-xs text-[#F3DEC0]">
+                    {{ category.description }}
+                  </p>
+                  <p class="text-[11px] text-[#E4E4EC]">
+                    {{ category.count }}+ bottles
+                  </p>
+                </div>
+                <span class="mt-3 text-[11px] font-medium text-[#F3DEC0] group-hover:underline">Shop now</span>
               </div>
-              <span class="mt-3 text-[11px] font-medium text-[#6B1238] group-hover:underline">Shop now</span>
             </button>
           </div>
         </div>
@@ -155,13 +180,17 @@
               <article
                 v-for="wine in featuredWines"
                 :key="wine.id"
-                class="min-w-[220px] max-w-[260px] flex-1 rounded-2xl bg-white p-4 sm:p-5 shadow-sm hover:shadow-lg border border-transparent hover:border-[#F3DEC0] transition"
+                class="min-w-[220px] max-w-[260px] flex-1 rounded-2xl bg-white p-4 sm:p-5 shadow-sm hover:shadow-lg border border-transparent hover:border-[#F3DEC0] transition cursor-pointer"
+                @click="openQuickView(wine)"
               >
                 <div class="relative mb-4">
-                  <div class="aspect-[3/4] w-full overflow-hidden rounded-xl bg-[#FAF7F3] flex items-center justify-center">
-                    <div
-                      class="w-10 h-24 sm:w-12 sm:h-28 rounded-full bg-gradient-to-b from-[#FDF8F0] to-[#6B1238] border border-[#E4E4EC]/70 shadow-[0_10px_30px_rgba(0,0,0,0.25)]"
-                    ></div>
+                  <div class="aspect-[3/4] w-full overflow-hidden rounded-xl bg-[#FAF7F3]">
+                    <img
+                      :src="wine.image"
+                      :alt="wine.name"
+                      loading="lazy"
+                      class="h-full w-full object-cover"
+                    />
                   </div>
                   <div class="absolute top-2 left-2 rounded-full bg-[#D8B46A] px-2.5 py-1 text-[11px] font-semibold text-[#111118]">
                     Top rated
@@ -197,8 +226,9 @@
                   </div>
                   <button
                     class="inline-flex items-center justify-center rounded-full bg-[#6B1238] text-white px-3 py-1.5 text-xs font-medium hover:bg-[#8E1E3A] transition-colors"
+                    @click.stop="openQuickView(wine)"
                   >
-                    Add to cart
+                    Quick view
                   </button>
                 </div>
               </article>
@@ -228,12 +258,16 @@
             <article
               v-for="wine in popularWines"
               :key="wine.id"
-              class="rounded-2xl bg-white p-3 sm:p-4 shadow-sm hover:shadow-md border border-transparent hover:border-[#F3DEC0] transition"
+              class="rounded-2xl bg-white p-3 sm:p-4 shadow-sm hover:shadow-md border border-transparent hover:border-[#F3DEC0] transition cursor-pointer"
+              @click="openQuickView(wine)"
             >
-              <div class="aspect-[3/4] w-full overflow-hidden rounded-xl bg-[#FAF7F3] mb-3 flex items-center justify-center">
-                <div
-                  class="w-8 h-20 sm:w-9 sm:h-24 rounded-full bg-gradient-to-b from-[#FDF8F0] to-[#6B1238] border border-[#E4E4EC]/70"
-                ></div>
+              <div class="aspect-[3/4] w-full overflow-hidden rounded-xl bg-[#FAF7F3] mb-3">
+                <img
+                  :src="wine.image"
+                  :alt="wine.name"
+                  loading="lazy"
+                  class="h-full w-full object-cover"
+                />
               </div>
               <div class="space-y-1">
                 <h3 class="text-sm font-semibold text-[#111118]">
@@ -333,12 +367,16 @@
               <article
                 v-for="wine in newArrivals"
                 :key="wine.id"
-                class="min-w-[220px] max-w-[260px] flex-1 rounded-2xl bg-white p-4 sm:p-5 shadow-sm hover:shadow-lg border border-transparent hover:border-[#F3DEC0] transition"
+                class="min-w-[220px] max-w-[260px] flex-1 rounded-2xl bg-white p-4 sm:p-5 shadow-sm hover:shadow-lg border border-transparent hover:border-[#F3DEC0] transition cursor-pointer"
+                @click="openQuickView(wine)"
               >
-                <div class="aspect-[3/4] w-full overflow-hidden rounded-xl bg-[#FAF7F3] mb-4 flex items-center justify-center">
-                  <div
-                    class="w-9 h-24 sm:w-10 sm:h-24 rounded-full bg-gradient-to-b from-[#FDF8F0] to-[#6B1238] border border-[#E4E4EC]/70"
-                  ></div>
+                <div class="aspect-[3/4] w-full overflow-hidden rounded-xl bg-[#FAF7F3] mb-4">
+                  <img
+                    :src="wine.image"
+                    :alt="wine.name"
+                    loading="lazy"
+                    class="h-full w-full object-cover"
+                  />
                 </div>
                 <div class="space-y-1">
                   <p class="inline-flex items-center rounded-full bg-[#F3DEC0] text-[11px] text-[#6B1238] px-2 py-0.5 font-medium mb-1">
@@ -383,59 +421,152 @@
           </form>
         </div>
       </section>
+
+      <CatalogQuickView
+        :open="quickViewOpen"
+        :wine="quickViewWine"
+        @close="closeQuickView"
+        @add-to-cart="handleQuickViewAddToCart"
+        @checkout="handleQuickViewCheckout"
+      />
     </main>
   </div>
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+import { useCart } from '~/composables/useCart'
+import CatalogQuickView from '~/components/catalog/CatalogQuickView.vue'
+import type { CatalogWine } from '~/types/catalog'
+
+const router = useRouter()
+const { addWine: addToCart } = useCart()
+
+const quickViewOpen = ref(false)
+const quickViewWine = ref<CatalogWine | null>(null)
+
+const openQuickView = (wine: any) => {
+  quickViewWine.value = {
+    id: wine.id,
+    name: wine.name,
+    slug: `home-${wine.id}`,
+    image: wine.image,
+    shortDescription: `${wine.region} · ${wine.country}`,
+    country: wine.country,
+    region: wine.region,
+    type: 'red',
+    year: 2021,
+    brand: 'WineBay selection',
+    flavorProfiles: [],
+    price: wine.price,
+    oldPrice: (wine as any).originalPrice,
+    rating: wine.rating,
+    reviews: wine.reviews
+  }
+  quickViewOpen.value = true
+}
+
+const closeQuickView = () => {
+  quickViewOpen.value = false
+}
+
+const handleQuickViewAddToCart = () => {
+  if (!quickViewWine.value) return
+  addToCart(
+    {
+      id: quickViewWine.value.id,
+      name: quickViewWine.value.name,
+      slug: quickViewWine.value.slug,
+      image: quickViewWine.value.image,
+      price: quickViewWine.value.price
+    },
+    1
+  )
+}
+
+const handleQuickViewCheckout = () => {
+  if (!quickViewWine.value) return
+  handleQuickViewAddToCart()
+  router.push('/checkout')
+}
+
+const goToCategory = (category: { name: string }) => {
+  let typeParam: string | null = null
+
+  if (category.name === 'Red wines') typeParam = 'red'
+  else if (category.name === 'White wines') typeParam = 'white'
+  else if (category.name === 'Sparkling') typeParam = 'sparkling'
+  else if (category.name === 'Rosé') typeParam = 'rose'
+
+  const query = typeParam ? { type: typeParam } : {}
+  router.push({ path: '/catalog', query })
+}
+
 const categories = [
   {
     name: 'Red wines',
     short: 'RW',
     description: 'Cabernet, Merlot, Syrah & more.',
-    count: 1200
+    count: 1200,
+    image:
+      'https://img.freepik.com/premium-photo/red-rose-white-wine-bottles_522560-15570.jpg?w=2000'
   },
   {
     name: 'White wines',
     short: 'WW',
     description: 'Crisp, mineral & aromatic whites.',
-    count: 830
+    count: 830,
+    image:
+      'https://img.freepik.com/free-photo/high-view-bottles-wine-row_23-2148243132.jpg?t=st=1764931929~exp=1764935529~hmac=6e7278479e49784b973b107d504cb2cb6431b94f921130906c6dd683d4ee6e8c&w=2000'
   },
   {
     name: 'Sparkling',
     short: 'SP',
     description: 'Champagne, Prosecco & cava.',
-    count: 410
+    count: 410,
+    image:
+      'https://img.freepik.com/free-photo/red-white-one-glasses-beside-bottles_23-2148414264.jpg?t=st=1764931941~exp=1764935541~hmac=4f73f6f9618ef456bbb895d948852fb172a21a6f6a1259247842e6092992a600&w=2000'
   },
   {
     name: 'Rosé',
     short: 'RS',
     description: 'Dry, fresh & summer-ready rosés.',
-    count: 290
+    count: 290,
+    image:
+      'https://img.freepik.com/premium-photo/red-rose-white-wine-bottles_522560-15570.jpg?w=2000'
   },
   {
     name: 'Premium cellar',
     short: 'PC',
     description: 'Iconic vintages & rare finds.',
-    count: 160
+    count: 160,
+    image:
+      'https://images.unsplash.com/photo-1554381401-dc595be1d842?q=80&w=691&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
   },
   {
     name: 'By region',
     short: 'BR',
     description: 'Bordeaux, Napa, Rioja & more.',
-    count: 540
+    count: 540,
+    image:
+      'https://img.freepik.com/free-photo/high-view-bottles-wine-row_23-2148243132.jpg?t=st=1764931929~exp=1764935529~hmac=6e7278479e49784b973b107d504cb2cb6431b94f921130906c6dd683d4ee6e8c&w=2000'
   },
   {
     name: 'By grape',
     short: 'BG',
     description: 'Pinot Noir, Chardonnay, Malbec.',
-    count: 460
+    count: 460,
+    image:
+      'https://img.freepik.com/premium-photo/red-rose-white-wine-bottles_522560-15570.jpg?w=2000'
   },
   {
     name: 'Gift sets',
     short: 'GS',
     description: 'Curated boxes for every occasion.',
-    count: 95
+    count: 95,
+    image:
+      'https://img.freepik.com/free-photo/red-white-one-glasses-beside-bottles_23-2148414264.jpg?t=st=1764931941~exp=1764935541~hmac=4f73f6f9618ef456bbb895d948852fb172a21a6f6a1259247842e6092992a600&w=2000'
   }
 ]
 
@@ -449,8 +580,9 @@ const featuredWines = [
     reviews: 182,
     price: 389,
     originalPrice: 420,
-    discount: 7
-  },
+    discount: 7,
+    image:
+      'https://images.unsplash.com/photo-1554381401-dc595be1d842?q=80&w=691&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'  },
   {
     id: 2,
     name: 'Opus One 2018',
@@ -460,8 +592,9 @@ const featuredWines = [
     reviews: 143,
     price: 349,
     originalPrice: 380,
-    discount: 8
-  },
+    discount: 8,
+    image:
+      'https://img.freepik.com/free-photo/high-view-bottles-wine-row_23-2148243132.jpg?t=st=1764931929~exp=1764935529~hmac=6e7278479e49784b973b107d504cb2cb6431b94f921130906c6dd683d4ee6e8c&w=2000'  },
   {
     id: 3,
     name: 'Veuve Clicquot Brut',
@@ -471,8 +604,9 @@ const featuredWines = [
     reviews: 212,
     price: 69,
     originalPrice: 79,
-    discount: 13
-  },
+    discount: 13,
+    image:
+      'https://img.freepik.com/premium-photo/red-rose-white-wine-bottles_522560-15570.jpg?w=2000'  },
   {
     id: 4,
     name: 'Antinori Tignanello 2019',
@@ -482,8 +616,9 @@ const featuredWines = [
     reviews: 97,
     price: 155,
     originalPrice: 170,
-    discount: 9
-  }
+    discount: 9,
+    image:
+      'https://img.freepik.com/free-photo/red-white-one-glasses-beside-bottles_23-2148414264.jpg?t=st=1764931941~exp=1764935541~hmac=4f73f6f9618ef456bbb895d948852fb172a21a6f6a1259247842e6092992a600&w=2000'  }
 ]
 
 const popularFilters = ['All', 'Red', 'White', 'Sparkling', 'Under $50', 'Rated 4.5+']
@@ -496,7 +631,9 @@ const popularWines = [
     country: 'Argentina',
     rating: 4.6,
     reviews: 321,
-    price: 29
+    price: 29,
+    image:
+      'https://images.unsplash.com/photo-1554381401-dc595be1d842?q=80&w=691&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
   },
   {
     id: 6,
@@ -505,7 +642,9 @@ const popularWines = [
     country: 'France',
     rating: 4.5,
     reviews: 198,
-    price: 32
+    price: 32,
+    image:
+      'https://img.freepik.com/free-photo/high-view-bottles-wine-row_23-2148243132.jpg?t=st=1764931929~exp=1764935529~hmac=6e7278479e49784b973b107d504cb2cb6431b94f921130906c6dd683d4ee6e8c&w=2000'
   },
   {
     id: 7,
@@ -514,7 +653,9 @@ const popularWines = [
     country: 'Spain',
     rating: 4.6,
     reviews: 254,
-    price: 24
+    price: 24,
+    image:
+      'https://img.freepik.com/premium-photo/red-rose-white-wine-bottles_522560-15570.jpg?w=2000'
   },
   {
     id: 8,
@@ -523,7 +664,9 @@ const popularWines = [
     country: 'Italy',
     rating: 4.4,
     reviews: 176,
-    price: 21
+    price: 21,
+    image:
+      'https://img.freepik.com/free-photo/red-white-one-glasses-beside-bottles_23-2148414264.jpg?t=st=1764931941~exp=1764935541~hmac=4f73f6f9618ef456bbb895d948852fb172a21a6f6a1259247842e6092992a600&w=2000'
   },
   {
     id: 9,
@@ -532,7 +675,9 @@ const popularWines = [
     country: 'USA',
     rating: 4.7,
     reviews: 132,
-    price: 42
+    price: 42,
+    image:
+      'https://images.unsplash.com/photo-1554381401-dc595be1d842?q=80&w=691&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
   },
   {
     id: 10,
@@ -541,7 +686,9 @@ const popularWines = [
     country: 'New Zealand',
     rating: 4.5,
     reviews: 289,
-    price: 26
+    price: 26,
+    image:
+      'https://img.freepik.com/free-photo/high-view-bottles-wine-row_23-2148243132.jpg?t=st=1764931929~exp=1764935529~hmac=6e7278479e49784b973b107d504cb2cb6431b94f921130906c6dd683d4ee6e8c&w=2000'
   },
   {
     id: 11,
@@ -550,7 +697,9 @@ const popularWines = [
     country: 'France',
     rating: 4.8,
     reviews: 88,
-    price: 79
+    price: 79,
+    image:
+      'https://img.freepik.com/premium-photo/red-rose-white-wine-bottles_522560-15570.jpg?w=2000'
   },
   {
     id: 12,
@@ -559,7 +708,9 @@ const popularWines = [
     country: 'Spain',
     rating: 4.3,
     reviews: 167,
-    price: 18
+    price: 18,
+    image:
+      'https://img.freepik.com/free-photo/red-white-one-glasses-beside-bottles_23-2148414264.jpg?t=st=1764931941~exp=1764935541~hmac=4f73f6f9618ef456bbb895d948852fb172a21a6f6a1259247842e6092992a600&w=2000'
   }
 ]
 
@@ -571,7 +722,9 @@ const newArrivals = [
     country: 'Italy',
     rating: 4.5,
     reviews: 34,
-    price: 39
+    price: 39,
+    image:
+      'https://images.unsplash.com/photo-1554381401-dc595be1d842?q=80&w=691&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
   },
   {
     id: 14,
@@ -580,7 +733,9 @@ const newArrivals = [
     country: 'USA',
     rating: 4.4,
     reviews: 27,
-    price: 44
+    price: 44,
+    image:
+      'https://img.freepik.com/free-photo/high-view-bottles-wine-row_23-2148243132.jpg?t=st=1764931929~exp=1764935529~hmac=6e7278479e49784b973b107d504cb2cb6431b94f921130906c6dd683d4ee6e8c&w=2000'
   },
   {
     id: 15,
@@ -589,7 +744,9 @@ const newArrivals = [
     country: 'France',
     rating: 4.3,
     reviews: 51,
-    price: 28
+    price: 28,
+    image:
+      'https://img.freepik.com/premium-photo/red-rose-white-wine-bottles_522560-15570.jpg?w=2000'
   },
   {
     id: 16,
@@ -598,7 +755,9 @@ const newArrivals = [
     country: 'Croatia',
     rating: 4.2,
     reviews: 19,
-    price: 31
+    price: 31,
+    image:
+      'https://img.freepik.com/free-photo/red-white-one-glasses-beside-bottles_23-2148414264.jpg?t=st=1764931941~exp=1764935541~hmac=4f73f6f9618ef456bbb895d948852fb172a21a6f6a1259247842e6092992a600&w=2000'
   }
 ]
 
