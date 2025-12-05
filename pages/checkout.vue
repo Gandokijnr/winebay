@@ -224,6 +224,7 @@ const handleBackToCart = () => {
                   type="text"
                   class="w-full rounded-xl border border-[#E4E4EC] bg-[#FAF7F3] px-3 py-2 text-sm focus:outline-none focus:border-[#6B1238] focus:ring-2 focus:ring-[#F3DEC0]"
                   placeholder="Full name"
+                  autocomplete="name"
                 />
               </div>
               <div class="space-y-1">
@@ -233,6 +234,7 @@ const handleBackToCart = () => {
                   type="tel"
                   class="w-full rounded-xl border border-[#E4E4EC] bg-[#FAF7F3] px-3 py-2 text-sm focus:outline-none focus:border-[#6B1238] focus:ring-2 focus:ring-[#F3DEC0]"
                   placeholder="e.g. +234 ..."
+                  autocomplete="tel"
                 />
               </div>
             </div>
@@ -244,6 +246,7 @@ const handleBackToCart = () => {
                 type="text"
                 class="w-full rounded-xl border border-[#E4E4EC] bg-[#FAF7F3] px-3 py-2 text-sm focus:outline-none focus:border-[#6B1238] focus:ring-2 focus:ring-[#F3DEC0]"
                 placeholder="Street address, building, etc."
+                autocomplete="street-address"
               />
               <p class="text-[11px] text-[#A0A0AA]">
                 Address auto-completion can be connected later to your preferred maps API.
@@ -258,6 +261,7 @@ const handleBackToCart = () => {
                   type="text"
                   class="w-full rounded-xl border border-[#E4E4EC] bg-[#FAF7F3] px-3 py-2 text-sm focus:outline-none focus:border-[#6B1238] focus:ring-2 focus:ring-[#F3DEC0]"
                   placeholder="Apartment, suite, etc."
+                  autocomplete="address-line2"
                 />
               </div>
               <div class="space-y-1">
@@ -267,6 +271,7 @@ const handleBackToCart = () => {
                   type="text"
                   class="w-full rounded-xl border border-[#E4E4EC] bg-[#FAF7F3] px-3 py-2 text-sm focus:outline-none focus:border-[#6B1238] focus:ring-2 focus:ring-[#F3DEC0]"
                   placeholder="City"
+                  autocomplete="address-level2"
                 />
               </div>
             </div>
@@ -279,6 +284,7 @@ const handleBackToCart = () => {
                   type="text"
                   class="w-full rounded-xl border border-[#E4E4EC] bg-[#FAF7F3] px-3 py-2 text-sm focus:outline-none focus:border-[#6B1238] focus:ring-2 focus:ring-[#F3DEC0]"
                   placeholder="State or region"
+                  autocomplete="address-level1"
                 />
               </div>
               <div class="space-y-1">
@@ -288,6 +294,7 @@ const handleBackToCart = () => {
                   type="text"
                   class="w-full rounded-xl border border-[#E4E4EC] bg-[#FAF7F3] px-3 py-2 text-sm focus:outline-none focus:border-[#6B1238] focus:ring-2 focus:ring-[#F3DEC0]"
                   placeholder="Postal code"
+                  autocomplete="postal-code"
                 />
               </div>
             </div>
@@ -325,13 +332,9 @@ const handleBackToCart = () => {
             </div>
 
             <div class="flex justify-end mt-2">
-              <button
-                type="button"
-                class="inline-flex items-center justify-center rounded-full bg-[#6B1238] text-white px-5 py-2.5 text-sm font-semibold hover:bg-[#8E1E3A]"
-                @click="handleNextFromDelivery"
-              >
+              <BaseButton variant="primary" size="md" @click="handleNextFromDelivery">
                 Continue to payment
-              </button>
+              </BaseButton>
             </div>
           </section>
 
@@ -396,6 +399,7 @@ const handleBackToCart = () => {
                   v-model="cardForm.cardName"
                   type="text"
                   class="w-full rounded-xl border border-[#E4E4EC] bg-[#FAF7F3] px-3 py-2 text-sm focus:outline-none focus:border-[#6B1238] focus:ring-2 focus:ring-[#F3DEC0]"
+                  autocomplete="cc-name"
                 />
               </div>
               <div class="space-y-1">
@@ -406,6 +410,7 @@ const handleBackToCart = () => {
                   inputmode="numeric"
                   class="w-full rounded-xl border border-[#E4E4EC] bg-[#FAF7F3] px-3 py-2 text-sm focus:outline-none focus:border-[#6B1238] focus:ring-2 focus:ring-[#F3DEC0]"
                   placeholder="XXXX XXXX XXXX XXXX"
+                  autocomplete="cc-number"
                 />
               </div>
               <div class="grid sm:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] gap-3">
@@ -416,6 +421,7 @@ const handleBackToCart = () => {
                     type="text"
                     class="w-full rounded-xl border border-[#E4E4EC] bg-[#FAF7F3] px-3 py-2 text-sm focus:outline-none focus:border-[#6B1238] focus:ring-2 focus:ring-[#F3DEC0]"
                     placeholder="MM / YY"
+                    autocomplete="cc-exp"
                   />
                 </div>
                 <div class="space-y-1">
@@ -427,6 +433,7 @@ const handleBackToCart = () => {
                     maxlength="4"
                     class="w-full rounded-xl border border-[#E4E4EC] bg-[#FAF7F3] px-3 py-2 text-sm focus:outline-none focus:border-[#6B1238] focus:ring-2 focus:ring-[#F3DEC0]"
                     placeholder="CVV"
+                    autocomplete="cc-csc"
                   />
                 </div>
               </div>

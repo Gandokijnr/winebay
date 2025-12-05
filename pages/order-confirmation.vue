@@ -2,6 +2,7 @@
 import { computed } from 'vue'
 import { useRouter } from 'vue-router'
 import { useOrder } from '~/composables/useOrder'
+import BaseButton from '~/components/ui/BaseButton.vue'
 
 const router = useRouter()
 const { lastOrder } = useOrder()
@@ -29,21 +30,19 @@ const handleTrackOrder = () => {
             Thank you for shopping with WineHub. Your order details are below.
           </p>
         </div>
-        <NuxtLink
-          to="/catalog"
-          class="inline-flex items-center justify-center rounded-full border border-[#E4E4EC] bg-white px-4 py-2 text-xs sm:text-sm text-[#4A4A54] hover:border-[#6B1238] hover:text-[#6B1238]"
-        >
-          Continue shopping
+        <NuxtLink to="/catalog">
+          <BaseButton variant="secondary" size="sm">
+            Continue shopping
+          </BaseButton>
         </NuxtLink>
       </header>
 
       <div v-if="!hasOrder" class="py-16 text-center text-sm text-[#4A4A54]">
         <p class="mb-3">We couldn't find a recent order to show here.</p>
-        <NuxtLink
-          to="/catalog"
-          class="inline-flex items-center justify-center rounded-full bg-[#6B1238] text-white px-5 py-2.5 text-sm font-semibold hover:bg-[#8E1E3A]"
-        >
-          Browse wines
+        <NuxtLink to="/catalog">
+          <BaseButton variant="primary" size="md">
+            Browse wines
+          </BaseButton>
         </NuxtLink>
       </div>
 
@@ -85,18 +84,13 @@ const handleTrackOrder = () => {
             </div>
 
             <div class="flex flex-wrap gap-2 mt-2">
-              <button
-                type="button"
-                class="inline-flex items-center justify-center rounded-full bg-[#6B1238] text-white px-4 py-2 text-xs sm:text-sm font-semibold hover:bg-[#8E1E3A]"
-                @click="handleTrackOrder"
-              >
+              <BaseButton variant="primary" size="sm" @click="handleTrackOrder">
                 Track order
-              </button>
-              <NuxtLink
-                to="/cart"
-                class="inline-flex items-center justify-center rounded-full border border-[#E4E4EC] bg-white px-4 py-2 text-xs sm:text-sm text-[#4A4A54] hover:border-[#6B1238] hover:text-[#6B1238]"
-              >
-                View cart
+              </BaseButton>
+              <NuxtLink to="/cart">
+                <BaseButton variant="secondary" size="sm">
+                  View cart
+                </BaseButton>
               </NuxtLink>
             </div>
           </div>
