@@ -19,7 +19,7 @@ const allWines = ref<CatalogWine[]>([
     name: 'Barolo Riserva Colline Nebbiole 2016',
     slug: 'barolo-riserva-colline-nebbiole-2016',
     image:
-      'https://images.pexels.com/photos/2148408/pexels-photo-2148408.jpeg?auto=compress&cs=tinysrgb&w=600',
+      'https://images.unsplash.com/photo-1554381401-dc595be1d842?q=80&w=691&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     shortDescription: 'Piedmont · Italy · Nebbiolo with dark cherry, tar and rose petal.',
     country: 'Italy',
     region: 'Piedmont',
@@ -38,7 +38,7 @@ const allWines = ref<CatalogWine[]>([
     name: 'Chablis Premier Cru Côte d’Or 2021',
     slug: 'chablis-premier-cru-cote-dor-2021',
     image:
-      'https://images.pexels.com/photos/2903164/pexels-photo-2903164.jpeg?auto=compress&cs=tinysrgb&w=600',
+      'https://img.freepik.com/free-photo/high-view-bottles-wine-row_23-2148243132.jpg?t=st=1764931929~exp=1764935529~hmac=6e7278479e49784b973b107d504cb2cb6431b94f921130906c6dd683d4ee6e8c&w=2000',
     shortDescription: 'Burgundy · France · Chardonnay with saline, citrus and chalky minerality.',
     country: 'France',
     region: 'Burgundy',
@@ -57,7 +57,7 @@ const allWines = ref<CatalogWine[]>([
     name: 'Ribera del Duero Reserva Sol y Piedra 2018',
     slug: 'ribera-del-duero-reserva-sol-y-piedra-2018',
     image:
-      'https://images.pexels.com/photos/6947226/pexels-photo-6947226.jpeg?auto=compress&cs=tinysrgb&w=600',
+      'https://img.freepik.com/premium-photo/red-rose-white-wine-bottles_522560-15570.jpg?w=2000',
     shortDescription: 'Castilla y León · Spain · Tempranillo with dark fruit and spice.',
     country: 'Spain',
     region: 'Ribera del Duero',
@@ -75,7 +75,7 @@ const allWines = ref<CatalogWine[]>([
     name: 'Marlborough Sauvignon Blanc Misty Vines 2023',
     slug: 'marlborough-sauvignon-blanc-misty-vines-2023',
     image:
-      'https://images.pexels.com/photos/1407851/pexels-photo-1407851.jpeg?auto=compress&cs=tinysrgb&w=600',
+      'https://img.freepik.com/free-photo/red-white-one-glasses-beside-bottles_23-2148414264.jpg?t=st=1764931941~exp=1764935541~hmac=4f73f6f9618ef456bbb895d948852fb172a21a6f6a1259247842e6092992a600&w=2000',
     shortDescription: 'Marlborough · New Zealand · Sauvignon Blanc, zesty and aromatic.',
     country: 'New Zealand',
     region: 'Marlborough',
@@ -94,7 +94,7 @@ const allWines = ref<CatalogWine[]>([
     name: 'Champagne Étoile Brut NV',
     slug: 'champagne-etoile-brut-nv',
     image:
-      'https://images.pexels.com/photos/2903166/pexels-photo-2903166.jpeg?auto=compress&cs=tinysrgb&w=600',
+      'https://images.unsplash.com/photo-1554381401-dc595be1d842?q=80&w=691&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     shortDescription: 'Champagne · France · Classic blend with fine mousse and brioche.',
     country: 'France',
     region: 'Champagne',
@@ -112,7 +112,7 @@ const allWines = ref<CatalogWine[]>([
     name: 'Côtes du Rhône Rouge Vieilles Vignes 2020',
     slug: 'cotes-du-rhone-rouge-vieilles-vignes-2020',
     image:
-      'https://images.pexels.com/photos/4664337/pexels-photo-4664337.jpeg?auto=compress&cs=tinysrgb&w=600',
+      'https://img.freepik.com/free-photo/high-view-bottles-wine-row_23-2148243132.jpg?t=st=1764931929~exp=1764935529~hmac=6e7278479e49784b973b107d504cb2cb6431b94f921130906c6dd683d4ee6e8c&w=2000',
     shortDescription: 'Rhône · France · Old-vine Grenache blend with black fruit and spice.',
     country: 'France',
     region: 'Rhône',
