@@ -102,13 +102,13 @@ const handleLoginSubmit = (payload: { email: string; password: string }) => {
             <span class="sr-only">Toggle search</span>
             <SearchIcon class="w-4 h-4" />
           </button>
-          <button
+          <!-- <button
             class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#E4E4EC] text-[#4A4A54] hover:border-[#6B1238] hover:text-[#6B1238] transition-colors md:hidden"
             @click="mobileMenuOpen = !mobileMenuOpen"
           >
             <span class="sr-only">Toggle navigation</span>
             <Menu class="w-4 h-4" />
-          </button>
+          </button> -->
           <div class="hidden md:flex items-center gap-3">
             <NuxtLink
               v-if="isAuthenticated"
