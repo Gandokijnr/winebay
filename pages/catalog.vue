@@ -8,124 +8,28 @@ import CatalogGrid from '~/components/catalog/CatalogGrid.vue'
 import CatalogPagination from '~/components/catalog/CatalogPagination.vue'
 import CatalogQuickView from '~/components/catalog/CatalogQuickView.vue'
 import type { CatalogFilters, CatalogWine, WineType, CatalogSortOption } from '~/types/catalog'
+import { wineDetails } from '~/data/wines'
 
 const router = useRouter()
 const route = useRoute()
 const { addWine: addToCart } = useCart()
 
-const allWines = ref<CatalogWine[]>([
-  {
-    id: 1,
-    name: 'Barolo Riserva Colline Nebbiole 2016',
-    slug: 'barolo-riserva-colline-nebbiole-2016',
-    image:
-      'https://images.unsplash.com/photo-1554381401-dc595be1d842?q=80&w=691&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    shortDescription: 'Piedmont · Italy · Nebbiolo with dark cherry, tar and rose petal.',
-    country: 'Italy',
-    region: 'Piedmont',
-    type: 'red',
-    year: 2016,
-    brand: 'Colline Nebbiole',
-    flavorProfiles: ['Fruity', 'Earthy', 'Spicy'],
-    price: 59,
-    oldPrice: 78,
-    rating: 4.9,
-    reviews: 87,
-    isLimited: true
-  },
-  {
-    id: 2,
-    name: 'Chablis Premier Cru Côte d’Or 2021',
-    slug: 'chablis-premier-cru-cote-dor-2021',
-    image:
-      'https://img.freepik.com/free-photo/high-view-bottles-wine-row_23-2148243132.jpg?t=st=1764931929~exp=1764935529~hmac=6e7278479e49784b973b107d504cb2cb6431b94f921130906c6dd683d4ee6e8c&w=2000',
-    shortDescription: 'Burgundy · France · Chardonnay with saline, citrus and chalky minerality.',
-    country: 'France',
-    region: 'Burgundy',
-    type: 'white',
-    year: 2021,
-    brand: 'Domaine Côte d’Or',
-    flavorProfiles: ['Mineral', 'Citrus', 'Fresh'],
-    price: 32,
-    oldPrice: 40,
-    rating: 4.6,
-    reviews: 54,
-    isNew: true
-  },
-  {
-    id: 3,
-    name: 'Ribera del Duero Reserva Sol y Piedra 2018',
-    slug: 'ribera-del-duero-reserva-sol-y-piedra-2018',
-    image:
-      'https://img.freepik.com/premium-photo/red-rose-white-wine-bottles_522560-15570.jpg?w=2000',
-    shortDescription: 'Castilla y León · Spain · Tempranillo with dark fruit and spice.',
-    country: 'Spain',
-    region: 'Ribera del Duero',
-    type: 'red',
-    year: 2018,
-    brand: 'Sol y Piedra',
-    flavorProfiles: ['Spicy', 'Fruity', 'Oak'],
-    price: 42,
-    oldPrice: 55,
-    rating: 4.8,
-    reviews: 63
-  },
-  {
-    id: 4,
-    name: 'Marlborough Sauvignon Blanc Misty Vines 2023',
-    slug: 'marlborough-sauvignon-blanc-misty-vines-2023',
-    image:
-      'https://img.freepik.com/free-photo/red-white-one-glasses-beside-bottles_23-2148414264.jpg?t=st=1764931941~exp=1764935541~hmac=4f73f6f9618ef456bbb895d948852fb172a21a6f6a1259247842e6092992a600&w=2000',
-    shortDescription: 'Marlborough · New Zealand · Sauvignon Blanc, zesty and aromatic.',
-    country: 'New Zealand',
-    region: 'Marlborough',
-    type: 'white',
-    year: 2023,
-    brand: 'Misty Vines',
-    flavorProfiles: ['Fruity', 'Herbal', 'Fresh'],
-    price: 21,
-    oldPrice: 27,
-    rating: 4.4,
-    reviews: 41,
-    isNew: true
-  },
-  {
-    id: 5,
-    name: 'Champagne Étoile Brut NV',
-    slug: 'champagne-etoile-brut-nv',
-    image:
-      'https://images.unsplash.com/photo-1554381401-dc595be1d842?q=80&w=691&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    shortDescription: 'Champagne · France · Classic blend with fine mousse and brioche.',
-    country: 'France',
-    region: 'Champagne',
-    type: 'sparkling',
-    year: 2020,
-    brand: 'Maison Étoile',
-    flavorProfiles: ['Yeasty', 'Citrus', 'Elegant'],
-    price: 39,
-    oldPrice: 52,
-    rating: 4.7,
-    reviews: 112
-  },
-  {
-    id: 6,
-    name: 'Côtes du Rhône Rouge Vieilles Vignes 2020',
-    slug: 'cotes-du-rhone-rouge-vieilles-vignes-2020',
-    image:
-      'https://img.freepik.com/free-photo/high-view-bottles-wine-row_23-2148243132.jpg?t=st=1764931929~exp=1764935529~hmac=6e7278479e49784b973b107d504cb2cb6431b94f921130906c6dd683d4ee6e8c&w=2000',
-    shortDescription: 'Rhône · France · Old-vine Grenache blend with black fruit and spice.',
-    country: 'France',
-    region: 'Rhône',
-    type: 'red',
-    year: 2020,
-    brand: 'Domaine des Roches',
-    flavorProfiles: ['Spicy', 'Fruity'],
-    price: 24,
-    oldPrice: 30,
-    rating: 4.5,
-    reviews: 52
-  }
-])
+const allWines = ref<CatalogWine[]>(
+  wineDetails.map(
+    ({
+      description,
+      tastingNotes,
+      alcoholPercent,
+      grapeVariety,
+      bottleSize,
+      stockStatus,
+      deliveryEstimate,
+      images,
+      foodPairings,
+      ...catalogFields
+    }) => catalogFields
+  )
+)
 
 const initialFilters: CatalogFilters = {
   priceMin: null,

@@ -6,7 +6,7 @@ export const wineDetails: WineDetail[] = [
     name: 'Barolo Riserva Colline Nebbiole 2016',
     slug: 'barolo-riserva-colline-nebbiole-2016',
     image:
-      'https://images.pexels.com/photos/2148408/pexels-photo-2148408.jpeg?auto=compress&cs=tinysrgb&w=600',
+      'https://www.massolino.it/wp-content/uploads/barolo-vigna-rionda-etichetta-nera.jpg',
     shortDescription: 'Piedmont · Italy · Nebbiolo with dark cherry, tar and rose petal.',
     country: 'Italy',
     region: 'Piedmont',
@@ -28,7 +28,7 @@ export const wineDetails: WineDetail[] = [
     stockStatus: 'in_stock',
     deliveryEstimate: 'Delivers to Abuja in 3–6 working days with temperature-controlled shipping.',
     images: [
-      'https://images.pexels.com/photos/2148408/pexels-photo-2148408.jpeg?auto=compress&cs=tinysrgb&w=800',
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Finest_new_serve.png/960px-Finest_new_serve.png',
       'https://images.pexels.com/photos/2148408/pexels-photo-2148408.jpeg?auto=compress&cs=tinysrgb&w=600',
       'https://images.pexels.com/photos/2148408/pexels-photo-2148408.jpeg?auto=compress&cs=tinysrgb&w=400'
     ],
@@ -39,7 +39,7 @@ export const wineDetails: WineDetail[] = [
     name: 'Chablis Premier Cru Côte d’Or 2021',
     slug: 'chablis-premier-cru-cote-dor-2021',
     image:
-      'https://images.pexels.com/photos/2903164/pexels-photo-2903164.jpeg?auto=compress&cs=tinysrgb&w=600',
+      'https://s3.amazonaws.com/efcheckout/kermitlynch/products/Kermit-Lynch-Wine-Merchant-2023-Bourgogne-HautesCtes-de-Beaune-iBlanci-Le-Mont-et-Fort-product-image-10915-medium.jpg',
     shortDescription: 'Burgundy · France · Chardonnay with saline, citrus and chalky minerality.',
     country: 'France',
     region: 'Burgundy',
@@ -72,7 +72,7 @@ export const wineDetails: WineDetail[] = [
     name: 'Ribera del Duero Reserva Sol y Piedra 2018',
     slug: 'ribera-del-duero-reserva-sol-y-piedra-2018',
     image:
-      'https://images.pexels.com/photos/6947226/pexels-photo-6947226.jpeg?auto=compress&cs=tinysrgb&w=600',
+      'https://www.antzara.com/cdn/shop/files/8437020273152_4.jpg?v=1704395277&width=1445',
     shortDescription: 'Castilla y León · Spain · Tempranillo with dark fruit and spice.',
     country: 'Spain',
     region: 'Ribera del Duero',
@@ -137,7 +137,7 @@ export const wineDetails: WineDetail[] = [
     name: 'Champagne Étoile Brut NV',
     slug: 'champagne-etoile-brut-nv',
     image:
-      'https://images.pexels.com/photos/2903166/pexels-photo-2903166.jpeg?auto=compress&cs=tinysrgb&w=600',
+      'https://impandmaker.co.uk/cdn/shop/files/signature-champagne-cheese-board-chocolates-gift-hamperfood-hamper-254364.webp?v=1760367894&width=1256',
     shortDescription: 'Champagne · France · Classic blend with fine mousse and brioche.',
     country: 'France',
     region: 'Champagne',
@@ -158,9 +158,9 @@ export const wineDetails: WineDetail[] = [
     stockStatus: 'in_stock',
     deliveryEstimate: 'Delivers to Abuja in 5–8 working days.',
     images: [
-      'https://images.pexels.com/photos/2903166/pexels-photo-2903166.jpeg?auto=compress&cs=tinysrgb&w=800',
-      'https://images.pexels.com/photos/2903166/pexels-photo-2903166.jpeg?auto=compress&cs=tinysrgb&w=600',
-      'https://images.pexels.com/photos/2903166/pexels-photo-2903166.jpeg?auto=compress&cs=tinysrgb&w=400'
+      'https://content.thirtyonewhiskey.com/wp-content/uploads/2023/08/02160322/PXL_20230802_200934490.PORTRAIT-scaled.jpg',
+      'https://content.thirtyonewhiskey.com/wp-content/uploads/2023/08/02160322/PXL_20230802_200934490.PORTRAIT-scaled.jpg',
+      'https://content.thirtyonewhiskey.com/wp-content/uploads/2023/08/02160322/PXL_20230802_200934490.PORTRAIT-scaled.jpg'
     ],
     foodPairings: ['Canapés', 'Fresh oysters', 'Sushi']
   },
@@ -169,7 +169,7 @@ export const wineDetails: WineDetail[] = [
     name: 'Côtes du Rhône Rouge Vieilles Vignes 2020',
     slug: 'cotes-du-rhone-rouge-vieilles-vignes-2020',
     image:
-      'https://images.pexels.com/photos/4664337/pexels-photo-4664337.jpeg?auto=compress&cs=tinysrgb&w=600',
+      'https://www.harrogatefinewinecompany.com/cdn/shop/products/image_1aab108a-fa48-4870-8e12-155b18111370_1081x1080.jpg?v=1655913803',
     shortDescription: 'Rhône · France · Old-vine Grenache blend with black fruit and spice.',
     country: 'France',
     region: 'Rhône',
@@ -195,5 +195,200 @@ export const wineDetails: WineDetail[] = [
       'https://images.pexels.com/photos/4664337/pexels-photo-4664337.jpeg?auto=compress&cs=tinysrgb&w=400'
     ],
     foodPairings: ['Charcuterie', 'Roast chicken', 'Grilled vegetables']
+  },
+  {
+    id: 7,
+    name: 'Martell Blue Swift',
+    slug: 'martell-blue-swift',
+    image:
+      'https://whiskyadvocate.com/get/files/image/galleries/Martell02.png?resize=1920x0',
+    shortDescription: 'Cognac · France · VSOP cognac finished in bourbon casks.',
+    country: 'France',
+    region: 'Cognac',
+    type: 'fortified',
+    year: 2021,
+    brand: 'Martell',
+    flavorProfiles: ['Vanilla', 'Caramel', 'Spice'],
+    price: 75,
+    oldPrice: 89,
+    rating: 4.8,
+    reviews: 134,
+    isLimited: true,
+    description:
+      'A smooth, expressive cognac aged in French oak and finished in bourbon casks, layering ripe stone fruit, vanilla, caramel and gentle spice.',
+    tastingNotes: ['Vanilla', 'Caramel', 'Stone fruit', 'Toasted oak'],
+    alcoholPercent: 40,
+    grapeVariety: 'Ugni Blanc (distilled wine spirit)',
+    bottleSize: '700ml',
+    stockStatus: 'in_stock',
+    deliveryEstimate: 'Delivers to Abuja in 3–6 working days.',
+    images: [
+      'https://images.unsplash.com/photo-1554381401-dc595be1d842?q=80&w=691&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      'https://images.unsplash.com/photo-1554381401-dc595be1d842?q=80&w=691&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      'https://images.unsplash.com/photo-1554381401-dc595be1d842?q=80&w=691&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+    ],
+    foodPairings: ['Dark chocolate desserts', 'Roast duck', 'Cigar pairings']
+  },
+  {
+    id: 8,
+    name: "Moët & Chandon Ice Impérial",
+    slug: 'moet-chandon-ice-imperial',
+    image:
+      'https://img.freepik.com/free-photo/red-white-one-glasses-beside-bottles_23-2148414264.jpg?t=st=1764931941~exp=1764935541~hmac=4f73f6f9618ef456bbb895d948852fb172a21a6f6a1259247842e6092992a600&w=2000',
+    shortDescription: 'Champagne · France · Demi-sec Champagne created to be served over ice.',
+    country: 'France',
+    region: 'Champagne',
+    type: 'sparkling',
+    year: 2020,
+    brand: 'Moët & Chandon',
+    flavorProfiles: ['Fruity', 'Sweet', 'Fresh'],
+    price: 85,
+    oldPrice: 95,
+    rating: 4.7,
+    reviews: 210,
+    isLimited: true,
+    description:
+      'A playful, fruit-forward Champagne blended specifically to be enjoyed over ice, with vibrant tropical fruit, stone fruit and refreshing citrus.',
+    tastingNotes: ['Tropical fruit', 'Peach', 'Guava', 'Citrus zest'],
+    alcoholPercent: 12,
+    grapeVariety: 'Chardonnay, Pinot Noir, Pinot Meunier',
+    bottleSize: '750ml',
+    stockStatus: 'in_stock',
+    deliveryEstimate: 'Delivers to Abuja in 3–6 working days.',
+    images: [
+      'https://img.freepik.com/free-photo/red-white-one-glasses-beside-bottles_23-2148414264.jpg?t=st=1764931941~exp=1764935541~hmac=4f73f6f9618ef456bbb895d948852fb172a21a6f6a1259247842e6092992a600&w=2000',
+      'https://img.freepik.com/free-photo/red-white-one-glasses-beside-bottles_23-2148414264.jpg?t=st=1764931941~exp=1764935541~hmac=4f73f6f9618ef456bbb895d948852fb172a21a6f6a1259247842e6092992a600&w=2000',
+      'https://img.freepik.com/free-photo/red-white-one-glasses-beside-bottles_23-2148414264.jpg?t=st=1764931941~exp=1764935541~hmac=4f73f6f9618ef456bbb895d948852fb172a21a6f6a1259247842e6092992a600&w=2000'
+    ],
+    foodPairings: ['Summer fruit platters', 'Light desserts', 'Poolside canapés']
+  },
+  {
+    id: 9,
+    name: 'Matsui – Kurayoshi Pure Malt Whisky',
+    slug: 'matsui-kurayoshi-pure-malt-whisky',
+    image:
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Finest_new_serve.png/960px-Finest_new_serve.png',
+    shortDescription: 'Tottori · Japan · Pure malt whisky with dried fruit, malt and gentle smoke.',
+    country: 'Japan',
+    region: 'Tottori',
+    type: 'fortified',
+    year: 2019,
+    brand: 'Matsui Shuzo',
+    flavorProfiles: ['Malt', 'Fruity', 'Spice'],
+    price: 95,
+    oldPrice: 110,
+    rating: 4.7,
+    reviews: 88,
+    description:
+      'A balanced Japanese pure malt whisky matured in oak, showing layers of dried fruits, malt sweetness, subtle spice and gentle smoke.',
+    tastingNotes: ['Dried apricot', 'Malt biscuit', 'Vanilla', 'Soft smoke'],
+    alcoholPercent: 43,
+    grapeVariety: 'Barley malt (distilled)',
+    bottleSize: '700ml',
+    stockStatus: 'low_stock',
+    deliveryEstimate: 'Delivers to Abuja in 4–7 working days.',
+    images: [
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Finest_new_serve.png/960px-Finest_new_serve.png',
+      'https://images.pexels.com/photos/2148408/pexels-photo-2148408.jpeg?auto=compress&cs=tinysrgb&w=600',
+      'https://images.pexels.com/photos/2148408/pexels-photo-2148408.jpeg?auto=compress&cs=tinysrgb&w=400'
+    ],
+    foodPairings: ['Grilled steak', 'Smoked cheese', 'Dark chocolate']
+  },
+  {
+    id: 10,
+    name: "Jack Daniel's Old No. 7",
+    slug: 'jack-daniels-old-no-7',
+    image:
+      'https://fattalonline.com/cdn/shop/files/278165-3.png?v=1733925602',
+    shortDescription: 'Tennessee · USA · Iconic Tennessee whiskey with mellow charcoal character.',
+    country: 'USA',
+    region: 'Tennessee',
+    type: 'fortified',
+    year: 2018,
+    brand: "Jack Daniel's",
+    flavorProfiles: ['Caramel', 'Oak', 'Vanilla'],
+    price: 35,
+    oldPrice: 42,
+    rating: 4.6,
+    reviews: 245,
+    description:
+      'Classic Tennessee whiskey charcoal mellowed drop by drop for smoothness, offering caramel, toasted oak, vanilla and gentle spice.',
+    tastingNotes: ['Caramel', 'Vanilla', 'Toasted oak', 'Baking spice'],
+    alcoholPercent: 40,
+    grapeVariety: 'Corn, rye and barley mash (distilled)',
+    bottleSize: '700ml',
+    stockStatus: 'in_stock',
+    deliveryEstimate: 'Delivers to Abuja in 3–6 working days.',
+    images: [
+      'https://images.pexels.com/photos/6947226/pexels-photo-6947226.jpeg?auto=compress&cs=tinysrgb&w=800',
+      'https://images.pexels.com/photos/6947226/pexels-photo-6947226.jpeg?auto=compress&cs=tinysrgb&w=600',
+      'https://images.pexels.com/photos/6947226/pexels-photo-6947226.jpeg?auto=compress&cs=tinysrgb&w=400'
+    ],
+    foodPairings: ['BBQ ribs', 'Burgers', 'Pecan pie']
+  },
+  {
+    id: 11,
+    name: 'Light Live Sparkling Red',
+    slug: 'light-live-sparkling-red',
+    image:
+      'https://img.freepik.com/premium-photo/red-rose-white-wine-bottles_522560-15570.jpg?w=2000',
+    shortDescription: 'Non-alcoholic · Germany · Fruity, gently sparkling red alcohol-free drink.',
+    country: 'Germany',
+    region: 'Rheinland',
+    type: 'sparkling',
+    year: 2023,
+    brand: 'Light Live',
+    flavorProfiles: ['Fruity', 'Sweet', 'Light'],
+    price: 12,
+    oldPrice: 15,
+    rating: 4.3,
+    reviews: 57,
+    isNew: true,
+    description:
+      'Vibrant alcohol-free sparkling red with juicy berry fruit, fine mousse and a refreshing, lightly sweet finish.',
+    tastingNotes: ['Red berries', 'Cherry', 'Soft sweetness'],
+    alcoholPercent: 0,
+    grapeVariety: 'Dealcoholised red wine blend',
+    bottleSize: '750ml',
+    stockStatus: 'in_stock',
+    deliveryEstimate: 'Delivers to Abuja in 3–6 working days.',
+    images: [
+      'https://img.freepik.com/premium-photo/red-rose-white-wine-bottles_522560-15570.jpg?w=2000',
+      'https://img.freepik.com/premium-photo/red-rose-white-wine-bottles_522560-15570.jpg?w=2000',
+      'https://img.freepik.com/premium-photo/red-rose-white-wine-bottles_522560-15570.jpg?w=2000'
+    ],
+    foodPairings: ['Party snacks', 'Fresh fruit', 'Light desserts']
+  },
+  {
+    id: 12,
+    name: 'Hennessy',
+    slug: 'hennessy',
+    image:
+      'https://content.thirtyonewhiskey.com/wp-content/uploads/2023/08/02160322/PXL_20230802_200934490.PORTRAIT-scaled.jpg',
+    shortDescription: 'Cognac · France · Classic cognac with rich dried fruit and oak.',
+    country: 'France',
+    region: 'Cognac',
+    type: 'fortified',
+    year: 2020,
+    brand: 'Hennessy',
+    flavorProfiles: ['Dried fruit', 'Oak', 'Spice'],
+    price: 55,
+    oldPrice: 62,
+    rating: 4.7,
+    reviews: 178,
+    description:
+      'A benchmark cognac offering notes of dried fruit, toasted oak, vanilla and baking spice with a smooth, warming finish.',
+    tastingNotes: ['Dried apricot', 'Toasted oak', 'Vanilla', 'Spice'],
+    alcoholPercent: 40,
+    grapeVariety: 'Ugni Blanc (distilled wine spirit)',
+    bottleSize: '700ml',
+    stockStatus: 'in_stock',
+    deliveryEstimate: 'Delivers to Abuja in 4–7 working days.',
+    images: [
+      'https://images.pexels.com/photos/2903166/pexels-photo-2903166.jpeg?auto=compress&cs=tinysrgb&w=800',
+      'https://images.pexels.com/photos/2903166/pexels-photo-2903166.jpeg?auto=compress&cs=tinysrgb&w=600',
+      'https://images.pexels.com/photos/2903166/pexels-photo-2903166.jpeg?auto=compress&cs=tinysrgb&w=400'
+    ],
+    foodPairings: ['Dark chocolate', 'Nutty desserts', 'Blue cheese']
   }
 ]

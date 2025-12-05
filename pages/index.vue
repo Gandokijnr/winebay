@@ -526,8 +526,7 @@ const categories = [
     description: 'Champagne, Prosecco & cava.',
     count: 410,
     image:
-      'https://img.freepik.com/free-photo/red-white-one-glasses-beside-bottles_23-2148414264.jpg?t=st=1764931941~exp=1764935541~hmac=4f73f6f9618ef456bbb895d948852fb172a21a6f6a1259247842e6092992a600&w=2000'
-  },
+      'https://impandmaker.co.uk/cdn/shop/files/signature-champagne-cheese-board-chocolates-gift-hamperfood-hamper-254364.webp?v=1760367894&width=1256'  },
   {
     name: 'Rosé',
     short: 'RS',
@@ -572,192 +571,171 @@ const categories = [
 
 const featuredWines = [
   {
-    id: 1,
-    name: 'Château Margaux 2016',
-    region: 'Bordeaux',
+    id: 7,
+    name: 'Martell Blue Swift',
+    region: 'Cognac',
     country: 'France',
-    rating: 4.9,
-    reviews: 182,
-    price: 389,
-    originalPrice: 420,
-    discount: 7,
-    image:
-      'https://images.unsplash.com/photo-1554381401-dc595be1d842?q=80&w=691&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'  },
-  {
-    id: 2,
-    name: 'Opus One 2018',
-    region: 'Napa Valley',
-    country: 'USA',
     rating: 4.8,
-    reviews: 143,
-    price: 349,
-    originalPrice: 380,
-    discount: 8,
+    reviews: 134,
+    price: 75,
+    originalPrice: 89,
+    discount: 16,
     image:
-      'https://img.freepik.com/free-photo/high-view-bottles-wine-row_23-2148243132.jpg?t=st=1764931929~exp=1764935529~hmac=6e7278479e49784b973b107d504cb2cb6431b94f921130906c6dd683d4ee6e8c&w=2000'  },
+      'https://whiskyadvocate.com/get/files/image/galleries/Martell02.png?resize=1920x0'
+  },
   {
-    id: 3,
-    name: 'Veuve Clicquot Brut',
+    id: 8,
+    name: 'Moët & Chandon Ice Impérial',
     region: 'Champagne',
     country: 'France',
     rating: 4.7,
-    reviews: 212,
-    price: 69,
-    originalPrice: 79,
-    discount: 13,
+    reviews: 210,
+    price: 85,
+    originalPrice: 95,
+    discount: 11,
     image:
-      'https://img.freepik.com/premium-photo/red-rose-white-wine-bottles_522560-15570.jpg?w=2000'  },
+      'https://impandmaker.co.uk/cdn/shop/files/signature-champagne-cheese-board-chocolates-gift-hamperfood-hamper-254364.webp?v=1760367894&width=1256' },
   {
-    id: 4,
-    name: 'Antinori Tignanello 2019',
-    region: 'Tuscany',
-    country: 'Italy',
-    rating: 4.8,
-    reviews: 97,
-    price: 155,
-    originalPrice: 170,
-    discount: 9,
+    id: 12,
+    name: 'Hennessy',
+    region: 'Cognac',
+    country: 'France',
+    rating: 4.7,
+    reviews: 178,
+    price: 55,
+    originalPrice: 62,
+    discount: 11,
     image:
-      'https://img.freepik.com/free-photo/red-white-one-glasses-beside-bottles_23-2148414264.jpg?t=st=1764931941~exp=1764935541~hmac=4f73f6f9618ef456bbb895d948852fb172a21a6f6a1259247842e6092992a600&w=2000'  }
+      'https://content.thirtyonewhiskey.com/wp-content/uploads/2023/08/02160322/PXL_20230802_200934490.PORTRAIT-scaled.jpg'
+  },
+  {
+    id: 10,
+    name: "Jack Daniel's Old No. 7",
+    region: 'Tennessee',
+    country: 'USA',
+    rating: 4.6,
+    reviews: 245,
+    price: 35,
+    originalPrice: 42,
+    discount: 17,
+    image:
+      'https://fattalonline.com/cdn/shop/files/278165-3.png?v=1733925602'
+  }
 ]
 
 const popularFilters = ['All', 'Red', 'White', 'Sparkling', 'Under $50', 'Rated 4.5+']
 
 const popularWines = [
   {
-    id: 5,
-    name: 'Malbec Reserva 2020',
-    region: 'Mendoza',
-    country: 'Argentina',
-    rating: 4.6,
-    reviews: 321,
-    price: 29,
-    image:
-      'https://images.unsplash.com/photo-1554381401-dc595be1d842?q=80&w=691&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-  },
-  {
-    id: 6,
-    name: 'Sancerre Blanc 2021',
-    region: 'Loire',
-    country: 'France',
-    rating: 4.5,
-    reviews: 198,
-    price: 32,
-    image:
-      'https://img.freepik.com/free-photo/high-view-bottles-wine-row_23-2148243132.jpg?t=st=1764931929~exp=1764935529~hmac=6e7278479e49784b973b107d504cb2cb6431b94f921130906c6dd683d4ee6e8c&w=2000'
-  },
-  {
     id: 7,
-    name: 'Rioja Crianza 2019',
-    region: 'Rioja',
-    country: 'Spain',
-    rating: 4.6,
-    reviews: 254,
-    price: 24,
+    name: 'Martell Blue Swift',
+    region: 'Cognac',
+    country: 'France',
+    rating: 4.8,
+    reviews: 134,
+    price: 75,
     image:
-      'https://img.freepik.com/premium-photo/red-rose-white-wine-bottles_522560-15570.jpg?w=2000'
+      'https://whiskyadvocate.com/get/files/image/galleries/Martell02.png?resize=1920x0'
   },
   {
     id: 8,
-    name: 'Prosecco Superiore DOCG',
-    region: 'Valdobbiadene',
-    country: 'Italy',
-    rating: 4.4,
-    reviews: 176,
-    price: 21,
+    name: 'Moët & Chandon Ice Impérial',
+    region: 'Champagne',
+    country: 'France',
+    rating: 4.7,
+    reviews: 210,
+    price: 85,
     image:
-      'https://img.freepik.com/free-photo/red-white-one-glasses-beside-bottles_23-2148414264.jpg?t=st=1764931941~exp=1764935541~hmac=4f73f6f9618ef456bbb895d948852fb172a21a6f6a1259247842e6092992a600&w=2000'
-  },
+      'https://impandmaker.co.uk/cdn/shop/files/signature-champagne-cheese-board-chocolates-gift-hamperfood-hamper-254364.webp?v=1760367894&width=1256'  },
   {
     id: 9,
-    name: 'Pinot Noir Estate 2020',
-    region: 'Willamette Valley',
-    country: 'USA',
+    name: 'Matsui – Kurayoshi Pure Malt Whisky',
+    region: 'Tottori',
+    country: 'Japan',
     rating: 4.7,
-    reviews: 132,
-    price: 42,
+    reviews: 88,
+    price: 95,
     image:
-      'https://images.unsplash.com/photo-1554381401-dc595be1d842?q=80&w=691&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Finest_new_serve.png/960px-Finest_new_serve.png'
   },
   {
     id: 10,
-    name: 'New Zealand Sauvignon Blanc',
-    region: 'Marlborough',
-    country: 'New Zealand',
-    rating: 4.5,
-    reviews: 289,
-    price: 26,
+    name: "Jack Daniel's Old No. 7",
+    region: 'Tennessee',
+    country: 'USA',
+    rating: 4.6,
+    reviews: 245,
+    price: 35,
     image:
-      'https://img.freepik.com/free-photo/high-view-bottles-wine-row_23-2148243132.jpg?t=st=1764931929~exp=1764935529~hmac=6e7278479e49784b973b107d504cb2cb6431b94f921130906c6dd683d4ee6e8c&w=2000'
+      'https://fattalonline.com/cdn/shop/files/278165-3.png?v=1733925602'
   },
   {
     id: 11,
-    name: 'Châteauneuf-du-Pape 2018',
-    region: 'Rhône',
-    country: 'France',
-    rating: 4.8,
-    reviews: 88,
-    price: 79,
+    name: 'Light Live Sparkling Red',
+    region: 'Rheinland',
+    country: 'Germany',
+    rating: 4.3,
+    reviews: 57,
+    price: 12,
     image:
       'https://img.freepik.com/premium-photo/red-rose-white-wine-bottles_522560-15570.jpg?w=2000'
   },
   {
     id: 12,
-    name: 'Cava Brut Reserva',
-    region: 'Penedès',
-    country: 'Spain',
-    rating: 4.3,
-    reviews: 167,
-    price: 18,
+    name: 'Hennessy',
+    region: 'Cognac',
+    country: 'France',
+    rating: 4.7,
+    reviews: 178,
+    price: 55,
     image:
-      'https://img.freepik.com/free-photo/red-white-one-glasses-beside-bottles_23-2148414264.jpg?t=st=1764931941~exp=1764935541~hmac=4f73f6f9618ef456bbb895d948852fb172a21a6f6a1259247842e6092992a600&w=2000'
+      'https://content.thirtyonewhiskey.com/wp-content/uploads/2023/08/02160322/PXL_20230802_200934490.PORTRAIT-scaled.jpg'
   }
 ]
 
 const newArrivals = [
   {
-    id: 13,
-    name: 'Etna Rosso 2021',
-    region: 'Sicily',
-    country: 'Italy',
-    rating: 4.5,
-    reviews: 34,
-    price: 39,
-    image:
-      'https://images.unsplash.com/photo-1554381401-dc595be1d842?q=80&w=691&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-  },
-  {
-    id: 14,
-    name: 'Chardonnay Single Vineyard 2022',
-    region: 'Sonoma Coast',
-    country: 'USA',
-    rating: 4.4,
-    reviews: 27,
-    price: 44,
-    image:
-      'https://img.freepik.com/free-photo/high-view-bottles-wine-row_23-2148243132.jpg?t=st=1764931929~exp=1764935529~hmac=6e7278479e49784b973b107d504cb2cb6431b94f921130906c6dd683d4ee6e8c&w=2000'
-  },
-  {
-    id: 15,
-    name: 'Rosé Provence 2023',
-    region: 'Provence',
-    country: 'France',
+    id: 11,
+    name: 'Light Live Sparkling Red',
+    region: 'Rheinland',
+    country: 'Germany',
     rating: 4.3,
-    reviews: 51,
-    price: 28,
+    reviews: 57,
+    price: 12,
     image:
       'https://img.freepik.com/premium-photo/red-rose-white-wine-bottles_522560-15570.jpg?w=2000'
   },
   {
-    id: 16,
-    name: 'Organic Orange Wine 2022',
-    region: 'Istria',
-    country: 'Croatia',
-    rating: 4.2,
-    reviews: 19,
-    price: 31,
+    id: 8,
+    name: 'Moët & Chandon Ice Impérial',
+    region: 'Champagne',
+    country: 'France',
+    rating: 4.7,
+    reviews: 210,
+    price: 85,
     image:
-      'https://img.freepik.com/free-photo/red-white-one-glasses-beside-bottles_23-2148414264.jpg?t=st=1764931941~exp=1764935541~hmac=4f73f6f9618ef456bbb895d948852fb172a21a6f6a1259247842e6092992a600&w=2000'
+      'https://impandmaker.co.uk/cdn/shop/files/signature-champagne-cheese-board-chocolates-gift-hamperfood-hamper-254364.webp?v=1760367894&width=1256'  },
+  {
+    id: 7,
+    name: 'Martell Blue Swift',
+    region: 'Cognac',
+    country: 'France',
+    rating: 4.8,
+    reviews: 134,
+    price: 75,
+    image:
+      'https://whiskyadvocate.com/get/files/image/galleries/Martell02.png?resize=1920x0'
+  },
+  {
+    id: 9,
+    name: 'Matsui – Kurayoshi Pure Malt Whisky',
+    region: 'Tottori',
+    country: 'Japan',
+    rating: 4.7,
+    reviews: 88,
+    price: 95,
+    image:
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Finest_new_serve.png/960px-Finest_new_serve.png'
   }
 ]
 
